@@ -1,8 +1,8 @@
-import { GET_BEERS, MORE_INFORMATION } from "../types";
+import { GET_BEERS, ADD_FAVOURITES } from "../types";
 
 const initialState = {
   beers: [],
-  moreDetails: {}
+  favourites: []
 };
 
 export default function(state = initialState, action) {
@@ -12,10 +12,10 @@ export default function(state = initialState, action) {
         ...state,
         beers: action.payload
       };
-    case MORE_INFORMATION:
+    case ADD_FAVOURITES:
       return {
         ...state,
-        moreDetails: action.payload
+        favourites: [...state.favourites, action.payload]
       };
     default:
       return state;

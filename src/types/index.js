@@ -1,2 +1,3 @@
 export const GET_BEERS = "GET_BEERS";
 export const MORE_INFORMATION = "MORE_INFORMATION";
+export const ADD_FAVOURITES = "ADD_FAVOURITES";

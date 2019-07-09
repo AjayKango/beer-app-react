@@ -26,7 +26,11 @@ export default function Beer(props) {
                   {props.beer.name}
                 </span>
                 <span style={{ float: "right" }}>
-                  <button type="button" className="btn btn-outline-primary">
+                  <button
+                    onClick={() => props.addBeerToFavourite(props.beer)}
+                    type="button"
+                    className="btn btn-outline-primary"
+                  >
                     Add to Favourites
                   </button>
                 </span>

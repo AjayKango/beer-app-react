@@ -3,5 +3,5 @@ import beerReducer from "./beerReducer";
 
 export default combineReducers({
   beers: beerReducer,
-  moreDetails: beerReducer
+  favourites: beerReducer
 });
