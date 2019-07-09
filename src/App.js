@@ -1,14 +1,15 @@
 import React from "react";
-import { BeerContainer } from "./containers";
+import Router from "./routes/routes";
 import { Provider } from "react-redux";
 import store from "./store";
-
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <Provider store={store}>
-      <BeerContainer />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </Provider>
   );
 }

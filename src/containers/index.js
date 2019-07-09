@@ -1,3 +1,4 @@
 import BeerContainer from "./beer-container";
+import MoreInfoContainer from "./more-info-container";
 
-export { BeerContainer };
+export { BeerContainer, MoreInfoContainer };

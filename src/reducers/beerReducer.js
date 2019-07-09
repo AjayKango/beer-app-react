@@ -1,7 +1,8 @@
-import { GET_BEERS } from "../types";
+import { GET_BEERS, MORE_INFORMATION } from "../types";
 
 const initialState = {
-  beers: []
+  beers: [],
+  moreDetails: {}
 };
 
 export default function(state = initialState, action) {
@@ -10,6 +11,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         beers: action.payload
+      };
+    case MORE_INFORMATION:
+      return {
+        ...state,
+        moreDetails: action.payload
       };
     default:
       return state;

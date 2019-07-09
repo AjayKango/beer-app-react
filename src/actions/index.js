@@ -1,4 +1,4 @@
-import { GET_BEERS } from "../types";
+import { GET_BEERS, MORE_INFORMATION } from "../types";
 
 const getBeers = () => dispatch => {
   fetch("https://api.punkapi.com/v2/beers")
@@ -11,4 +11,11 @@ const getBeers = () => dispatch => {
     );
 };
 
-export { getBeers };
+const moreDetailsForBeer = beer => dispatch => {
+  dispatch({
+    type: MORE_INFORMATION,
+    payload: beer
+  });
+};
+
+export { getBeers, moreDetailsForBeer };
