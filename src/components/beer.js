@@ -9,6 +9,8 @@ export default function Beer(props) {
 
   let showButton = (
     <button
+      id="btn-add-favourites"
+      aria-label="Add to Favourites"
       onClick={() => props.addBeerToFavourite(props.beer)}
       type="button"
       className="btn btn-outline-primary"
@@ -16,9 +18,12 @@ export default function Beer(props) {
       Add to Favourites
     </button>
   );
+
   if (props.isFavourites) {
     showButton = (
       <button
+        id="btn-remove-favourites"
+        aria-label="Remove from Favourites"
         onClick={() => props.removeBeerFromFavourite(props.beer)}
         type="button"
         className="btn btn-outline-danger"
@@ -63,6 +68,8 @@ export default function Beer(props) {
               </div>
               <div style={{ marginTop: 10 }}>
                 <Link
+                  id="link-more-info"
+                  aria-label="More Information"
                   to={{
                     pathname: "/moreInfo",
                     state: { beer: props.beer }

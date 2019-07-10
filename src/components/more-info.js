@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { BackToHome } from "../components";
 
 export default function MoreInformation(props) {
@@ -19,8 +18,6 @@ export default function MoreInformation(props) {
     textAlign: "left",
     fontSize: 20
   };
-
-  console.log(props.beerInfo);
 
   return (
     <React.Fragment>
@@ -57,8 +54,8 @@ export default function MoreInformation(props) {
             <td style={attributeRow}>Food Pairing</td>
             <td style={contentRow}>
               <ul>
-                {props.beerInfo.food_pairing.map(foodItem => (
-                  <li>{foodItem}</li>
+                {props.beerInfo.food_pairing.map((foodItem, index) => (
+                  <li key={index}>{foodItem}</li>
                 ))}
               </ul>
             </td>

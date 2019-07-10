@@ -5,9 +5,13 @@ import { Link } from "react-router-dom";
 import { getBeers, addToFavourites } from "../actions";
 
 class BeerContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.addBeerToFavourite = this.addBeerToFavourite.bind(this);
+  }
+
   componentWillMount() {
     this.props.getBeers();
-    this.addBeerToFavourite = this.addBeerToFavourite.bind(this);
   }
 
   addBeerToFavourite(favBeer) {
@@ -22,13 +26,9 @@ class BeerContainer extends Component {
     const background = {
       background: "whitesmoke"
     };
-    let beerData = [];
-    if (this.props.beers.beers.length > 0) {
-      console.log(this.props.beers.beers);
-      beerData = this.props.beers.beers;
-    }
+    const { beers } = this.props.beers;
 
-    const beerList = beerData.map(beer => (
+    const beerList = beers.map(beer => (
       <Beer
         key={beer.id}
         beer={beer}
@@ -44,6 +44,7 @@ class BeerContainer extends Component {
           </span>
           <span style={{ float: "right", fontSize: 20 }}>
             <Link
+              aria-label="View favourites"
               to={{
                 pathname: "/viewFavourites"
               }}
