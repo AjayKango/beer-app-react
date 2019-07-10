@@ -1,4 +1,4 @@
-import { GET_BEERS, ADD_FAVOURITES } from "../types";
+import { GET_BEERS, ADD_FAVOURITES, REMOVE_FAVOURITES } from "../types";
 
 const getBeers = () => dispatch => {
   fetch("https://api.punkapi.com/v2/beers")
@@ -18,4 +18,11 @@ const addToFavourites = beer => dispatch => {
   });
 };
 
-export { getBeers, addToFavourites };
+const removeFromFavourites = beer => dispatch => {
+  dispatch({
+    type: REMOVE_FAVOURITES,
+    payload: beer
+  });
+};
+
+export { getBeers, addToFavourites, removeFromFavourites };

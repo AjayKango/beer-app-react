@@ -1,4 +1,4 @@
-import { GET_BEERS, ADD_FAVOURITES } from "../types";
+import { GET_BEERS, ADD_FAVOURITES, REMOVE_FAVOURITES } from "../types";
 
 const initialState = {
   beers: [],
@@ -16,6 +16,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         favourites: [...state.favourites, action.payload]
+      };
+    case REMOVE_FAVOURITES:
+      return {
+        ...state,
+        favourites: state.favourites.filter(item => item !== action.payload)
       };
     default:
       return state;

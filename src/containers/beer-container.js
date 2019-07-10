@@ -32,6 +32,7 @@ class BeerContainer extends Component {
       <Beer
         key={beer.id}
         beer={beer}
+        isFavourites={false}
         addBeerToFavourite={this.addBeerToFavourite}
       />
     ));
@@ -44,8 +45,7 @@ class BeerContainer extends Component {
           <span style={{ float: "right", fontSize: 20 }}>
             <Link
               to={{
-                pathname: "/viewFavourites",
-                state: { favouriteList: this.props.favourites.favourites }
+                pathname: "/viewFavourites"
               }}
             >
               View Favourites (

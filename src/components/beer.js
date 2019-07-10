@@ -7,6 +7,26 @@ export default function Beer(props) {
     width: 100
   };
 
+  let showButton = (
+    <button
+      onClick={() => props.addBeerToFavourite(props.beer)}
+      type="button"
+      className="btn btn-outline-primary"
+    >
+      Add to Favourites
+    </button>
+  );
+  if (props.isFavourites) {
+    showButton = (
+      <button
+        onClick={() => props.removeBeerFromFavourite(props.beer)}
+        type="button"
+        className="btn btn-outline-danger"
+      >
+        Remove from Favourites
+      </button>
+    );
+  }
   return (
     <React.Fragment>
       <table className="table">
@@ -25,15 +45,7 @@ export default function Beer(props) {
                 <span style={{ fontSize: 24, fontWeight: "bold" }}>
                   {props.beer.name}
                 </span>
-                <span style={{ float: "right" }}>
-                  <button
-                    onClick={() => props.addBeerToFavourite(props.beer)}
-                    type="button"
-                    className="btn btn-outline-primary"
-                  >
-                    Add to Favourites
-                  </button>
-                </span>
+                <span style={{ float: "right" }}>{showButton}</span>
               </div>
               <div
                 style={{

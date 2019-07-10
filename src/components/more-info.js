@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BackToHome } from "../components";
 
 export default function MoreInformation(props) {
   const imageSize = {
@@ -68,15 +69,7 @@ export default function MoreInformation(props) {
           </tr>
         </tbody>
       </table>
-      <Link
-        type="button"
-        className="btn btn-outline-primary"
-        to={{
-          pathname: "/"
-        }}
-      >
-        Back to Beer List
-      </Link>
+      <BackToHome />
     </React.Fragment>
   );
 }
