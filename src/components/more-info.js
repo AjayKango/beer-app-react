@@ -21,6 +21,9 @@ export default function MoreInformation(props) {
 
   return (
     <React.Fragment>
+      <h3 style={{ marginTop: 20, fontWeight: "bold" }}>
+        Details about this Beer
+      </h3>
       <table className="table">
         <tbody>
           <tr>

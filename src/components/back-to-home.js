@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 export default function BackToHome() {
   return (
     <Link
+      style={{ marginBottom: 20 }}
       id="link-back"
       aria-label="Back to Beer List"
-      type="button"
-      className="btn btn-outline-primary"
+      type="link"
+      className="btn btn-outline-dark"
       to={{
         pathname: "/"
       }}

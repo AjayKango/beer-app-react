@@ -42,7 +42,7 @@ class BeerContainer extends Component {
           <span style={{ fontSize: 35, fontWeight: "bolder" }}>
             Top 25 Beers
           </span>
-          <span style={{ float: "right", fontSize: 20 }}>
+          <span style={{ float: "right", fontSize: 20, marginTop: 55 }}>
             <Link
               aria-label="View favourites"
               to={{
