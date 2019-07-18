@@ -15,7 +15,10 @@ class BeerContainer extends Component {
   }
 
   addBeerToFavourite(favBeer) {
-    if (!this.props.favourites.favourites.includes(favBeer)) {
+    if (
+      this.props.favourites.favourites.filter(beer => beer.id == favBeer.id)
+        .length === 0
+    ) {
       this.props.addToFavourites(favBeer);
     } else {
       alert("Beer already added as favourite");
